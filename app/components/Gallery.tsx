@@ -13,31 +13,62 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="py-40 bg-white text-black">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="gallery"
+      className="relative py-48 bg-black text-white overflow-hidden"
+    >
 
+      {/* subtle tech background */}
+      <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
         <Reveal>
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-6xl font-semibold tracking-tightfont-[var(--font-playfair)]">
-              Our Projects
-            </h2>
-            <p className="mt-6 text-gray-600 font-[var(--font-inter)]">
-              A glimpse into our completed spaces.
+          <div className="text-center mb-28 max-w-3xl mx-auto">
+
+            <p className="uppercase tracking-[3px] text-xs text-cyan-400 font-[var(--font-inter)]">
+              Installations
             </p>
+
+            <h2 className="mt-6 text-5xl md:text-6xl font-[var(--font-orbitron)] font-semibold tracking-tight">
+              Security Deployments
+            </h2>
+
+            <p className="mt-6 text-gray-400 text-lg font-[var(--font-inter)] leading-relaxed">
+              A selection of Yenetra surveillance systems deployed across
+              residential, commercial, and enterprise environments.
+            </p>
+
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Gallery Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
           {images.map((img, index) => (
             <Reveal key={index}>
-              <div className="overflow-hidden">
+              <div className="group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer">
+
+                {/* Image */}
                 <div
-                  className="h-80 bg-cover bg-center transition duration-700 hover:scale-110"
+                  className="h-80 bg-cover bg-center image-hover"
                   style={{ backgroundImage: `url('${img}')` }}
                 />
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+
+                  <span className="text-cyan-400 text-sm uppercase tracking-[2px] font-[var(--font-inter)]">
+                    View Installation
+                  </span>
+
+                </div>
+
               </div>
             </Reveal>
           ))}
+
         </div>
 
       </div>

@@ -1,84 +1,141 @@
 "use client";
 
-import { FaInstagram, FaFacebookF, FaPinterestP } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-gray-900 text-gray-400 py-28">
-      <div className="max-w-7xl mx-auto px-6 grid sm:grid-cols-1 md:grid-cols-3 gap-16">
+    <footer className="relative bg-black text-gray-400 py-32 overflow-hidden">
 
-        {/* Brand Section */}
+      {/* subtle tech background */}
+      <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-16">
+
+        {/* Brand */}
         <div>
-          <h3 className="text-3xl md:text-6xl font-semibold tracking-tight(--font-playfair)] font-semibold text-white tracking-wide">
-  The Inside
-</h3>
+          <h3 className="text-4xl font-[var(--font-orbitron)] text-white tracking-tight">
+            YENETRA
+          </h3>
 
-          <p className="mt-6 font-[var(--font-inter)] leading-relaxed text-gray-400">
-            Blinds | Curtains | Wallpapers | Sofas
+          <p className="mt-6 font-[var(--font-inter)] text-gray-400 leading-relaxed">
+            Intelligent surveillance infrastructure designed for modern
+            homes, enterprises, and critical environments.
           </p>
 
           {/* Social Icons */}
           <div className="flex gap-6 mt-8 text-lg">
+
             <a
               href="#"
-              className="text-gray-500 hover:text-white transition duration-300"
+              className="text-gray-500 hover:text-cyan-400 transition duration-300"
             >
               <FaInstagram />
             </a>
 
             <a
               href="#"
-              className="text-gray-500 hover:text-white transition duration-300"
+              className="text-gray-500 hover:text-cyan-400 transition duration-300"
             >
               <FaFacebookF />
             </a>
 
             <a
               href="#"
-              className="text-gray-500 hover:text-white transition duration-300"
+              className="text-gray-500 hover:text-cyan-400 transition duration-300"
             >
-              <FaPinterestP />
+              <FaLinkedinIn />
             </a>
+
           </div>
         </div>
 
-        {/* Contact Section */}
+        {/* Solutions */}
         <div>
-          <h4 className="text-lg font-[var(--font-playfair)] text-white tracking-wide">
+          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
+            Solutions
+          </h4>
+
+          <ul className="mt-6 space-y-3 font-[var(--font-inter)]">
+
+            <li className="hover:text-white transition cursor-pointer">
+              AI Surveillance Cameras
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Enterprise Monitoring
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Access Control Systems
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Alarm & Detection Systems
+            </li>
+
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
+            Company
+          </h4>
+
+          <ul className="mt-6 space-y-3 font-[var(--font-inter)]">
+
+            <li className="hover:text-white transition cursor-pointer">
+              About Yenetra
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Installations
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Technology
+            </li>
+
+            <li className="hover:text-white transition cursor-pointer">
+              Contact
+            </li>
+
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
             Contact
           </h4>
 
-          <div className="mt-6 space-y-3 font-[var(--font-inter)]">
-            <p className="hover:text-white transition duration-300">
+          <div className="mt-6 space-y-4 font-[var(--font-inter)]">
+
+            <p className="hover:text-white transition">
               +91 XXXXX XXXXX
             </p>
 
-            <p className="hover:text-white transition duration-300">
-              info@theinside.com
+            <p className="hover:text-white transition">
+              security@yenetra.com
             </p>
+
+            <p className="text-gray-500">
+              Hyderabad, Telangana
+            </p>
+
           </div>
-        </div>
-
-        {/* Location Section */}
-        <div>
-          <h4 className="text-lg font-[var(--font-playfair)] text-white tracking-wide">
-            Visit Us
-          </h4>
-
-          <p className="mt-6 font-[var(--font-inter)] leading-relaxed">
-            Hyderabad, Telangana
-          </p>
         </div>
 
       </div>
 
       {/* Divider */}
-      <div className="mt-20 border-t border-gray-800" />
+      <div className="mt-24 border-t border-white/10" />
 
-      {/* Bottom Copyright */}
+      {/* Copyright */}
       <div className="text-center mt-10 text-sm font-[var(--font-inter)] text-gray-500">
-        © 2026 The Inside Home Furnishing. All rights reserved.
+        © 2026 Yenetra Security Systems. All rights reserved.
       </div>
+
     </footer>
   );
 }

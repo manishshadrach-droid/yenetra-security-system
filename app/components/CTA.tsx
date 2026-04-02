@@ -1,23 +1,51 @@
+"use client";
+
+import { useCart } from "@/context/CartContext"; // ✅ fixed import
+
 export default function CTA() {
+  const { openCart } = useCart();
+
   return (
-    <section className="py-40 bg-black text-white text-center">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="relative py-40 bg-[#020617] text-center overflow-hidden text-white">
 
-        <h2 className="text-3xl md:text-6xl font-semibold tracking-tight font-[var(--font-playfair)] leading-tight">
-          Ready to Redefine Your Interiors?
-        </h2>
+      {/* Grid */}
+      <div className="absolute inset-0 tech-grid opacity-[0.05]" />
 
-        <p className="mt-8 text-lg text-gray-300 font-[var(--font-inter)]">
-          Book a personalized consultation and transform your space with elegance.
+      <div className="relative max-w-4xl mx-auto px-6">
+
+        {/* Label */}
+        <p className="uppercase tracking-[3px] text-xs text-cyan-400">
+          Yenetra Security
         </p>
 
-        <div className="mt-12">
+        {/* Heading */}
+        <h2 className="mt-6 text-5xl md:text-6xl font-[var(--font-orbitron)] font-semibold leading-tight">
+          Protect What Matters Most
+        </h2>
+
+        {/* Description */}
+        <p className="mt-8 text-lg text-gray-400 max-w-2xl mx-auto">
+          Intelligent surveillance systems designed for homes, enterprises,
+          and critical environments.
+        </p>
+
+        {/* CTA */}
+        <div className="mt-14 flex justify-center gap-6 flex-wrap">
+
+          <button
+            onClick={openCart}
+            className="btn-primary glow-cyan-soft hover-glow"
+          >
+            Build Your Setup
+          </button>
+
           <a
             href="#contact"
-            className="bg-white text-black px-10 py-4 font-semibold tracking-wide hover:bg-gray-200 transition duration-300"
+            className="btn-outline hover-glow"
           >
-            Get Free Consultation
+            Request Consultation
           </a>
+
         </div>
 
       </div>

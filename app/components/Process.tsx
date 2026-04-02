@@ -1,72 +1,81 @@
 "use client";
 
 import Reveal from "./Reveal";
-import { FaRulerCombined, FaCouch, FaPaintRoller, FaTools } from "react-icons/fa";
+import { FaSearch, FaDraftingCompass, FaShieldAlt, FaTools } from "react-icons/fa";
 
-export default function Process() {
+export default function InstallationProcess() {
   const steps = [
     {
       number: "01",
-      icon: <FaRulerCombined />,
-      title: "Consultation",
-      text: "Understanding your space, lighting and lifestyle to define the right furnishing direction.",
+      icon: <FaSearch />,
+      title: "Security Assessment",
+      text: "We evaluate your property layout, entry points, and risk areas to determine the most effective surveillance strategy.",
     },
     {
       number: "02",
-      icon: <FaPaintRoller />,
-      title: "Measurement & Selection",
-      text: "Precise site measurements and curated material selection for seamless execution.",
+      icon: <FaDraftingCompass />,
+      title: "System Design",
+      text: "Our experts design a tailored security plan including camera placement, access control points, and monitoring systems.",
     },
     {
       number: "03",
-      icon: <FaCouch />,
-      title: "Customization",
-      text: "Tailored production of blinds, curtains, wallpapers or sofas crafted to perfection.",
+      icon: <FaShieldAlt />,
+      title: "Equipment Selection",
+      text: "We select high-performance CCTV cameras, NVR systems, alarms, and access control solutions suited to your environment.",
     },
     {
       number: "04",
       icon: <FaTools />,
       title: "Professional Installation",
-      text: "Flawless finishing by trained installers ensuring long-lasting elegance.",
+      text: "Certified technicians install, configure, and test your surveillance system for reliable long-term protection.",
     },
   ];
 
   return (
-    <section className="relative py-48 bg-gray-50 text-black overflow-hidden">
+    <section className="relative py-48 bg-black text-white overflow-hidden">
 
-      {/* Luxury Background Texture Effect */}
-      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_black_1px,_transparent_1px)] bg-[length:30px_30px]" />
+      {/* Subtle Tech Grid */}
+      <div className="absolute inset-0 tech-grid opacity-10" />
 
       <div className="relative max-w-6xl mx-auto px-6">
 
         <Reveal>
-          <div className="text-center mb-28">
-            <h2 className="text-3xl md:text-6xl font-[var(--font-playfair)] font-semibold tracking-tight">
-              Our Process
-            </h2>
-            <p className="mt-6 text-gray-600 font-[var(--font-inter)] max-w-2xl mx-auto">
-              A structured approach ensuring precision, elegance and seamless execution.
+          <div className="text-center mb-32 max-w-3xl mx-auto">
+
+            {/* Section Label */}
+            <p className="uppercase tracking-[3px] text-xs text-cyan-400 font-[var(--font-inter)]">
+              Deployment Process
             </p>
+
+            <h2 className="mt-6 text-5xl md:text-6xl font-[var(--font-orbitron)] font-semibold tracking-tight">
+              Security Deployment Workflow
+            </h2>
+
+            <p className="mt-6 text-gray-400 text-lg font-[var(--font-inter)] leading-relaxed">
+              A structured process ensuring precise surveillance deployment,
+              intelligent monitoring coverage, and long-term operational reliability.
+            </p>
+
           </div>
         </Reveal>
 
-        <div className="relative space-y-28">
+        <div className="relative space-y-32">
 
-          {/* Vertical Animated Line */}
-          <div className="absolute left-6 top-0 h-full w-[2px] bg-gray-200 hidden md:block animate-pulse" />
+          {/* Vertical Timeline */}
+          <div className="absolute left-7 top-0 h-full w-[1px] bg-white/10 hidden md:block" />
 
           {steps.map((step, index) => (
             <Reveal key={index}>
-              <div className="relative grid md:grid-cols-[80px_1fr] gap-10 items-start">
+              <div className="relative grid md:grid-cols-[90px_1fr] gap-12 items-start">
 
-                {/* Icon + Number */}
-                <div className="relative flex flex-col items-center">
+                {/* Icon + Step */}
+                <div className="flex flex-col items-center relative">
 
-                  <div className="text-3xl text-gray-700 mb-4">
+                  <div className="w-14 h-14 flex items-center justify-center rounded-full border border-cyan-400/40 text-cyan-400 text-xl bg-black">
                     {step.icon}
                   </div>
 
-                  <div className="text-5xl font-[var(--font-playfair)] text-gray-200">
+                  <div className="mt-6 text-4xl font-[var(--font-orbitron)] text-white/20">
                     {step.number}
                   </div>
 
@@ -74,13 +83,15 @@ export default function Process() {
 
                 {/* Content */}
                 <div>
-                  <h3 className="text-2xl font-[var(--font-playfair)] mb-6">
+
+                  <h3 className="text-2xl md:text-3xl font-[var(--font-orbitron)] mb-6 tracking-tight">
                     {step.title}
                   </h3>
 
-                  <p className="text-gray-600 font-[var(--font-inter)] leading-relaxed text-lg">
+                  <p className="text-gray-400 font-[var(--font-inter)] leading-relaxed text-lg max-w-xl">
                     {step.text}
                   </p>
+
                 </div>
 
               </div>
