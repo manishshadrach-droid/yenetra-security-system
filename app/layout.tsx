@@ -1,7 +1,10 @@
+
 import "./globals.css";
 import { Inter, Orbitron } from "next/font/google";
 import type { Metadata } from "next";
-import { CartProvider } from "@/context/CartContext"; // ✅ correct import
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsApp from "./components/WhatsApp";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -18,13 +21,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yenetra.in"),
+  metadataBase: new URL("https://yenetracctv.com"),
   title: {
-    default: "Yenetra Security Systems",
-    template: "%s | Yenetra",
+    default: "YeNetra CCTV Dealers | Har Pal Pe Nazar",
+    template: "%s | YeNetra CCTV Dealers",
   },
   description:
-    "Yenetra provides advanced CCTV cameras, intelligent surveillance systems, biometric access control, alarm systems, and integrated security infrastructure.",
+    "Explore CCTV cameras, DVRs, NVRs, networking equipment and surveillance solutions from YeNetra CCTV Dealers, Badangpet, Hyderabad.",
 };
 
 export default function RootLayout({
@@ -33,25 +36,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${orbitron.variable} ${inter.variable}`}
-    >
+    <html lang="en" className={`${orbitron.variable} ${inter.variable}`}>
       <body className="bg-[#020617] text-white antialiased overflow-x-hidden">
-
-        {/* BACKGROUND */}
         <div className="fixed inset-0 -z-20 bg-[#020617]" />
-        <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.08),transparent_60%)]" />
+        <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.08),transparent_60%)] pointer-events-none -z-20" />
         <div className="fixed inset-0 tech-grid opacity-[0.05] pointer-events-none -z-10" />
-        <div className="fixed inset-0 noise-overlay -z-10" />
+        <div className="fixed inset-0 noise-overlay pointer-events-none -z-10" />
 
-        {/* ✅ CART PROVIDER (correct) */}
-        <CartProvider>
-          <div className="relative min-h-screen flex flex-col">
-            <main className="flex-1">{children}</main>
-          </div>
-        </CartProvider>
-
+        <div className="relative min-h-screen flex flex-col">
+          <Navbar />
+          <WhatsApp />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
