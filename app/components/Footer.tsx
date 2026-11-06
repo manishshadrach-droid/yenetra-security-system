@@ -1,141 +1,96 @@
-"use client";
 
+import Link from "next/link";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black text-gray-400 py-32 overflow-hidden">
-
-      {/* subtle tech background */}
+    <footer className="relative bg-black text-gray-400 py-24 overflow-hidden">
       <div className="absolute inset-0 tech-grid opacity-10 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-16">
+      <div className="relative max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        {/* Brand */}
         <div>
           <h3 className="text-4xl font-[var(--font-orbitron)] text-white tracking-tight">
             YENETRA
           </h3>
-
-          <p className="mt-6 font-[var(--font-inter)] text-gray-400 leading-relaxed">
-            Intelligent surveillance infrastructure designed for modern
-            homes, enterprises, and critical environments.
+          <p className="mt-6 font-[var(--font-inter)] leading-relaxed">
+            Har Pal Pe Nazar. CCTV cameras and surveillance solutions
+            for homes, businesses and commercial properties.
           </p>
-
-          {/* Social Icons */}
           <div className="flex gap-6 mt-8 text-lg">
-
-            <a
-              href="#"
-              className="text-gray-500 hover:text-cyan-400 transition duration-300"
-            >
+            <a href="#" aria-label="Instagram" className="hover:text-cyan-400 transition">
               <FaInstagram />
             </a>
-
-            <a
-              href="#"
-              className="text-gray-500 hover:text-cyan-400 transition duration-300"
-            >
+            <a href="#" aria-label="Facebook" className="hover:text-cyan-400 transition">
               <FaFacebookF />
             </a>
-
-            <a
-              href="#"
-              className="text-gray-500 hover:text-cyan-400 transition duration-300"
-            >
+            <a href="#" aria-label="LinkedIn" className="hover:text-cyan-400 transition">
               <FaLinkedinIn />
             </a>
-
           </div>
         </div>
 
-        {/* Solutions */}
         <div>
-          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
-            Solutions
-          </h4>
-
-          <ul className="mt-6 space-y-3 font-[var(--font-inter)]">
-
-            <li className="hover:text-white transition cursor-pointer">
-              AI Surveillance Cameras
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Enterprise Monitoring
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Access Control Systems
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Alarm & Detection Systems
-            </li>
-
+          <h4 className="text-sm uppercase tracking-[3px] text-white">Products</h4>
+          <ul className="mt-6 space-y-4">
+            <li><Link href="/products" className="hover:text-cyan-400">CCTV Cameras</Link></li>
+            <li><Link href="/products" className="hover:text-cyan-400">DVR & NVR Systems</Link></li>
+            <li><Link href="/products" className="hover:text-cyan-400">Networking Equipment</Link></li>
+            <li><Link href="/products" className="hover:text-cyan-400">Accessories</Link></li>
           </ul>
         </div>
 
-        {/* Company */}
         <div>
-          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
-            Company
-          </h4>
-
-          <ul className="mt-6 space-y-3 font-[var(--font-inter)]">
-
-            <li className="hover:text-white transition cursor-pointer">
-              About Yenetra
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Installations
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Technology
-            </li>
-
-            <li className="hover:text-white transition cursor-pointer">
-              Contact
-            </li>
-
+          <h4 className="text-sm uppercase tracking-[3px] text-white">Company</h4>
+          <ul className="mt-6 space-y-4">
+            <li><Link href="/about" className="hover:text-cyan-400">About YeNetra</Link></li>
+            <li><Link href="/services" className="hover:text-cyan-400">Our Services</Link></li>
+            <li><Link href="/products" className="hover:text-cyan-400">Product Catalogue</Link></li>
+            <li><Link href="/contact" className="hover:text-cyan-400">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
-          <h4 className="text-sm uppercase tracking-[3px] text-white font-[var(--font-inter)]">
-            Contact
-          </h4>
+          <h4 className="text-sm uppercase tracking-[3px] text-white">Contact</h4>
 
-          <div className="mt-6 space-y-4 font-[var(--font-inter)]">
+          <div className="mt-6 space-y-5">
+            <div>
+              <p className="text-cyan-400 text-xs uppercase tracking-wider mb-2">Call Us</p>
+              <a href="tel:+919492790807" className="block hover:text-cyan-400">
+                +91 94927 90807
+              </a>
+              <a href="tel:+919000572766" className="block mt-2 hover:text-cyan-400">
+                +91 90005 72766
+              </a>
+            </div>
 
-            <p className="hover:text-white transition">
-              +91 XXXXX XXXXX
-            </p>
+            <div>
+              <p className="text-cyan-400 text-xs uppercase tracking-wider mb-2">Address</p>
+              <p className="leading-7">
+                ARG Complex,<br />
+                Badangpet Main Road,<br />
+                Badangpet, Balapur,<br />
+                Hyderabad, Telangana.
+              </p>
+            </div>
 
-            <p className="hover:text-white transition">
-              security@yenetra.com
-            </p>
-
-            <p className="text-gray-500">
-              Hyderabad, Telangana
-            </p>
-
+            <a
+              href="https://wa.me/919492790807"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-cyan-400 hover:text-cyan-300"
+            >
+              WhatsApp Enquiry →
+            </a>
           </div>
         </div>
-
       </div>
 
-      {/* Divider */}
-      <div className="mt-24 border-t border-white/10" />
+      <div className="mt-20 border-t border-white/10" />
 
-      {/* Copyright */}
-      <div className="text-center mt-10 text-sm font-[var(--font-inter)] text-gray-500">
-        © 2026 Yenetra Security Systems. All rights reserved.
+      <div className="text-center mt-8 px-6 text-sm text-gray-500">
+        © 2026 YeNetra CCTV Dealers. All rights reserved.
       </div>
-
     </footer>
   );
 }
